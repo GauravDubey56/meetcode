@@ -36,11 +36,13 @@ exports.postCollab = async (req, res, next) => {
                adminID: req.user._id,
                adminName: req.user.name,
                title: req.body.title,
+               adminEmail: req.user.username,
+               link: req.body.link,
                desc: req.body.desc,
                paused: false,
-               maxLimit: req.body.maxLimit,
                joinedUsersID: []
           });
+          console.log(newCollab);
              newCollab.save((err) => {
                if(err){
                  console.log(err);

@@ -2,14 +2,15 @@
 <main>
      <section class="mainContainer">
      <div class='title'>
-          <h2>Active Collabs</h2>
+          <h2>Active Projects</h2>
           <div class='underline'></div>
      </div>
      <% for(collab of collabs) {%>
      <article class='review'>
-          <h4 class='author'><%=collab.adminName%></h4>
+          <a href="/user/<%=collab.adminID%>"><h4 class='author'><%=collab.adminName%></h4></a>
           <p class='job'><%=collab.title%></p>
           <p class='info'><%=collab.desc%></p>
+          <p class='info'><a href=<%=collab.link%>><%=collab.link%></a></p>
           <!-- <div class='button-container'>
           <button class='prev-btn' onClick={prevPerson}>
           Prev
@@ -18,7 +19,7 @@
           Next
           </button>
           </div> -->
-          <form action="/collab/request/:<%=collab.adminID%>" method="POST">
+          <form action="/collab/request/<%=collab.adminID%>" method="POST">
           <button type="submit" class='random-btn'>
           Join me
           </button>
@@ -28,9 +29,3 @@
      </section>
 </main>
 
-<main>
-     <section className='container'>
-          
-          <Invites />
-     </section>
-     </main>

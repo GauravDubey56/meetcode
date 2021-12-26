@@ -12,6 +12,7 @@ const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const queueRouter = require("./routes/queue");
 const collabRouter = require("./routes/collab")
+const profileRouter = require("./routes/user_profile")
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -37,7 +38,7 @@ app.use("/", indexRouter);
 app.use("/auth", authRouter);
 app.use("/queue", queueRouter);
 app.use("/collab", collabRouter)
-
+app.use("/user", profileRouter);
 app.listen(5000, () => {
   console.log("Server is running on port 5000");
 });

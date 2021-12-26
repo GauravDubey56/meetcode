@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 
 const collabSchema = new mongoose.Schema({
+  
   adminID: String,
   adminName: String,
+  adminEmail: String,
   title: String,
   desc: String, 
   paused: Boolean,
-  maxLimit: Number,
+  link: String,
   joinedUsersID: [String]
 });
 
